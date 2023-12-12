@@ -1,0 +1,39 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int n, m, k, a1, ak;
+    cin >> n;
+
+    while (n--) {
+      cin >> m;
+      cin >> k;
+      cin >> a1;
+      cin >> ak;
+      int res = 0;
+
+      while (m > 0) {
+        if (k > m) {
+          cout << m << ' ' << res << endl;
+          res += m > a1 ? m - a1 : 0;
+          break;
+        }
+
+        m -= k;
+        if (ak > 0) {
+          ak--;
+        } else {
+          res++;
+        }
+      }
+
+      cout << res << endl;
+    }
+    return 0;
+}
+
